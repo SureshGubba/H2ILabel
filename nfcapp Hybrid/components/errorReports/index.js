@@ -20,10 +20,9 @@ function LoadErrorReports() {
         dataType: "json",
         success: function (data) {
             console.log(data);
-            $("#images").kendoMobileListView({
+            $("#errorReports").kendoMobileListView({
                 dataSource: data,
-                template: "<div><h3>#: data.CreatedByUser.EmailID # </h3> <div></div></div>"
-
+                template: "<div><span>#: data.ErrorReportID #</span><h3>#: data.CreatedByUser.EmailID # </h3></div></div>"
             });
         },
         error: function (xhr) {
