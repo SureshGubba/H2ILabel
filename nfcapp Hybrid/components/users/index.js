@@ -1,27 +1,40 @@
 'use strict';
 
+
 app.users = kendo.observable({
     onShow: function () {
         
+console.log('hi');
+        
+        LoadNFCUsers();
     },
     afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_users
 
-alert('hi');
+function LoadNFCUsers()
+{
+console.log('nfc');
+    var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
+	var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
+    $.ajax({
+                type: "GET",
+                crossDomain: true,
+                url: WebAPIURL + "/user/GetUsers?Authorization=" + AuthKey,
+                dataType: "json",
+                success: function (data) {                  
+				console.log(data);
+                     $("#images").kendoMobileListView({
+                        dataSource: data,
+                        template: "<span>#: data.EmailID #</span>"
+                    });
+                },
+                error: function (xhr) {                    
+                    alert(xhr.responseText);
+                }
+            })
+}
 
-var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
-        var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
-        $.ajax({
-            url: WebAPIURL + "/user/GetUsers?Authorization=" + AuthKey',
-            type: "GET",            
-            success: function (data) {
-                alert(JSON.stringify(data));
-            },
-            error: function (error) {
-                alert(JSON.stringify(error));
-            }
-        })
         
 // END_CUSTOM_CODE_users

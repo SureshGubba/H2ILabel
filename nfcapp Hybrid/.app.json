@@ -16,9 +16,27 @@
       "title": "Users",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "view",
+      "components": [],
+      "name": "errorReports",
+      "title": "Error Reports",
+      "addToNavigation": true,
+      "icon": "settings"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "dataProvider",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "name": "nfcdata",
+      "title": "nfcapp / nfcdata",
+      "source": "everlive",
+      "everliveKey": "TWsQzzbltr7tgUQu",
+      "offlineStorage": true
+    }
+  ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
   "view": "home",

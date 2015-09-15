@@ -15,9 +15,11 @@
     <script src="bower_components/everlive/min/everlive.all.min.js"></script>
     <script src="lib/progress/progress.all.min.js"></script>
     <script src="app.js"></script>
+    <script src="dataProviders/nfcdata.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/errorReports/index.js"></script>
     <script src="components/users/index.js"></script>
     <script src="components/home/index.js"></script>
     <div data-role="layout" data-id="main">
@@ -31,8 +33,9 @@
 
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="contacts">Home</a>
                 <a href="components/users/view.html" data-icon="organize">Users</a>
+                <a href="components/home/view.html" data-icon="contacts">Home</a>
+                <a href="components/errorReports/view.html" data-icon="settings">Error Reports</a>
             </div>
         </footer>
     </div>
