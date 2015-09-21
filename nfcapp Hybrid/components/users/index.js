@@ -25,7 +25,7 @@ console.log('nfc');
                 dataType: "json",
                 success: function (data) {                  
 				console.log(data);
-                     $("#images").kendoMobileListView({
+                     $("#users").kendoMobileListView({
                         dataSource: data,
                         template: "<span>#: data.EmailID #</span>"
                     });
