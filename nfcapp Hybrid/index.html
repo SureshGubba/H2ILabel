@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <link href="bower_components/kendo-ui-appbuilder-core/styles/kendo.mobile.all.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="styles/rateit.css">
     <!-- cordova script (this will be a 404 during development if served with `grunt serve`) -->
     <script src="cordova.js"></script>
 
@@ -16,6 +16,9 @@
     <script src="lib/progress/progress.all.min.js"></script>
     <script src="app.js"></script>
     <script src="dataProviders/nfcdata.js"></script>
+    <script src="rateit.js" type="text/javascript"></script>
+	
+
 </head>
 
 <body id="kendoUiMobileApp">
@@ -23,10 +26,12 @@
     <script src="components/errorReports/index.js"></script>
     <script src="components/users/index.js"></script>
     <script src="components/home/index.js"></script>
+ 
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
+                 <div class="rateit" data-rateit-value="5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
             </div>
         </header>
 
