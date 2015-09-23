@@ -41,7 +41,8 @@ function VerifyLogin(email,password,app)
                 },
                 success: function (data) {
                     console.log(data); 
-                    app.mobileApp.navigate("#usersview");
+                    console.log($('#usersview').attr("href"));
+                    app.mobileApp.navigate($('#usersview').attr("href"));
                 },
                 error: function (xhr) {
                     alert(xhr.responseText);
