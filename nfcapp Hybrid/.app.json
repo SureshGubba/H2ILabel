@@ -32,6 +32,37 @@
       "title": "Feedback",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "form",
+          "components": [
+            {
+              "type": "field",
+              "name": "email",
+              "title": "Email",
+              "inputType": "text",
+              "placeholder": "Email"
+            },
+            {
+              "type": "field",
+              "name": "password",
+              "title": "Password",
+              "inputType": "password",
+              "placeholder": "Password"
+            }
+          ],
+          "name": "loginModel",
+          "submitButton": "Login",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "name": "login",
+      "title": "Login",
+      "addToNavigation": true,
+      "icon": "contacts"
     }
   ],
   "dataProviders": [

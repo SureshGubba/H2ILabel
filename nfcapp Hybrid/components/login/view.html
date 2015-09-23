@@ -1,0 +1,27 @@
+<div data-role="view" data-title="Login" data-layout="main" data-model="app.login" data-show="app.login.onShow" data-after-show="app.login.afterShow">
+    <div id="loginModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Email
+                        <input data-bind="value: loginModel.fields.email" placeholder="Email" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input data-bind="value: loginModel.fields.password" placeholder="Password" type="password">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: loginModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: loginModel.submit }">Login</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_loginModel -->
+        <!-- END_CUSTOM_CODE_loginModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_login -->
+    <!-- END_CUSTOM_CODE_login -->
+</div>
