@@ -14,7 +14,7 @@ app.login = kendo.observable({
             email: '',
         },
         login: function() {
-            VerifyLogin(loginModel.fields.email,loginModel.fields.password);
+            VerifyLogin(loginModel.fields.email,loginModel.fields.password,app);
         },
         cancel: function() {}
     });
@@ -24,7 +24,7 @@ app.login = kendo.observable({
 
 // START_CUSTOM_CODE_loginModel
 
-function VerifyLogin(email,password)
+function VerifyLogin(email,password,app)
 {
     console.log(email);
     console.log(password);
@@ -40,7 +40,8 @@ function VerifyLogin(email,password)
 					"IMEINumber": Math.random()
                 },
                 success: function (data) {
-                    console.log(data);
+                    console.log(data); 
+                    app.mobileApp.navigate("#usersview");
                 },
                 error: function (xhr) {
                     alert(xhr.responseText);
