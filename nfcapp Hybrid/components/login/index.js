@@ -27,7 +27,7 @@ app.login = kendo.observable({
 function VerifyLogin(email,password)
 {
     console.log(email);
-    console.password(email);
+    console.log(password);
      var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
     var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
     $.ajax({
@@ -40,7 +40,7 @@ function VerifyLogin(email,password)
 					"IMEINumber": Math.random()
                 },
                 success: function (data) {
-                    location.reload();
+                    console.log(data);
                 },
                 error: function (xhr) {
                     alert(xhr.responseText);
