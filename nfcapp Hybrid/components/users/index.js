@@ -1,7 +1,7 @@
 'use strict';
 
 app.users = kendo.observable({
-    onShow: function() {},
+    onShow: function() {LoadNFCUsers();},
     afterShow: function() {}
 });
 

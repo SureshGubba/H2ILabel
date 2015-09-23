@@ -10,10 +10,12 @@ app.login = kendo.observable({
 (function(parent) {
     var loginModel = kendo.observable({
         fields: {
-            password: '',
+            password:'' ,
             email: '',
         },
-        submit: function() {},
+        login: function() {
+            VerifyLogin(loginModel.fields.email,loginModel.fields.password);
+        },
         cancel: function() {}
     });
 
@@ -21,4 +23,28 @@ app.login = kendo.observable({
 })(app.login);
 
 // START_CUSTOM_CODE_loginModel
+
+function VerifyLogin(email,password)
+{
+    console.log(email);
+    console.password(email);
+     var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
+    var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
+    $.ajax({
+                type: "POST",
+                crossDomain: true,
+                url: WebAPIURL + "/User/Login?Authorization=" + AuthKey,
+                data: {
+                    "EmailID": email,
+                    "Password": password,
+					"IMEINumber": Math.random()
+                },
+                success: function (data) {
+                    location.reload();
+                },
+                error: function (xhr) {
+                    alert(xhr.responseText);
+                }
+            });
+}
 // END_CUSTOM_CODE_loginModel
