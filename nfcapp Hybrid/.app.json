@@ -100,6 +100,12 @@
               "name": "application",
               "title": "Application",
               "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "platform",
+              "title": "Platform",
+              "inputType": "text"
             }
           ],
           "name": "addUserModel",
