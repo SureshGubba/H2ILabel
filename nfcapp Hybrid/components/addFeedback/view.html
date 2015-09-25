@@ -1,0 +1,27 @@
+<div data-role="view" data-title="Add Feedback" data-layout="main-nonav" data-model="app.addFeedback" data-show="app.addFeedback.onShow" data-after-show="app.addFeedback.afterShow">
+    <div id="addFeedbackModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Comments
+                        <input data-bind="value: addFeedbackModel.fields.comments" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Rating
+                        <input data-bind="value: addFeedbackModel.fields.rating" type="text">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: addFeedbackModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: addFeedbackModel.submit }">Save</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_addFeedbackModel -->
+        <!-- END_CUSTOM_CODE_addFeedbackModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_addFeedback -->
+    <!-- END_CUSTOM_CODE_addFeedback -->
+</div>

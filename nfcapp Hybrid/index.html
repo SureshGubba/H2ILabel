@@ -19,6 +19,7 @@
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/addFeedback/index.js"></script>
     <script src="components/addUser/index.js"></script>
     <script src="components/login/index.js"></script>
     <script src="components/feedback/index.js"></script>
@@ -29,7 +30,6 @@
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
-                <span id="loggedinUser"></span>
             </div>
         </header>
 
@@ -37,10 +37,11 @@
 
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
-                <a href="components/login/view.html" data-icon="contacts">Login</a>
-                <a href="components/users/view.html" data-icon="organize" id="usersview">Users</a>
+                <a href="components/home/view.html" data-icon="contacts">Home</a>
+                <a href="components/users/view.html" data-icon="organize">Users</a>
                 <a href="components/errorReports/view.html" data-icon="settings">Error Reports</a>
                 <a href="components/feedback/view.html" data-icon="home">Feedback</a>
+                <a href="components/login/view.html" data-icon="contacts">Login</a>
             </div>
         </footer>
     </div>

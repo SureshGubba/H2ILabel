@@ -10,12 +10,10 @@ app.login = kendo.observable({
 (function(parent) {
     var loginModel = kendo.observable({
         fields: {
-            password:'' ,
+            password: '',
             email: '',
         },
-        login: function() {
-            VerifyLogin(loginModel.fields.email,loginModel.fields.password,app);
-        },
+        submit: function() {},
         cancel: function() {}
     });
 
@@ -24,30 +22,29 @@ app.login = kendo.observable({
 
 // START_CUSTOM_CODE_loginModel
 
-function VerifyLogin(email,password,app)
-{
+function VerifyLogin(email, password, app) {
     console.log(email);
     console.log(password);
-     var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
+    var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
     var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
     $.ajax({
-                type: "POST",
-                crossDomain: true,
-                url: WebAPIURL + "/User/Login?Authorization=" + AuthKey,
-                data: {
-                    "EmailID": email,
-                    "Password": password,
-					"IMEINumber": Math.random()
-                },
-                success: function (data) {
-                    localStorage.setItem("LoggedinUser",JSON.stringify(data));
-                    console.log(data); 
-                    console.log($('#usersview').attr("href"));
-                    app.mobileApp.navigate($('#usersview').attr("href"));
-                },
-                error: function (xhr) {
-                    alert(xhr.responseText);
-                }
-            });
+        type: "POST",
+        crossDomain: true,
+        url: WebAPIURL + "/User/Login?Authorization=" + AuthKey,
+        data: {
+            "EmailID": email,
+            "Password": password,
+            "IMEINumber": Math.random()
+        },
+        success: function(data) {
+            localStorage.setItem("LoggedinUser", JSON.stringify(data));
+            console.log(data);
+            console.log($('#usersview').attr("href"));
+            app.mobileApp.navigate($('#usersview').attr("href"));
+        },
+        error: function(xhr) {
+            alert(xhr.responseText);
+        }
+    });
 }
 // END_CUSTOM_CODE_loginModel

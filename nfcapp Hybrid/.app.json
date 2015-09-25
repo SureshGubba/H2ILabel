@@ -122,6 +122,34 @@
       "name": "addUser",
       "title": "Add User",
       "addToNavigation": false
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "form",
+          "components": [
+            {
+              "type": "field",
+              "name": "comments",
+              "title": "Comments",
+              "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "rating",
+              "title": "Rating",
+              "inputType": "text"
+            }
+          ],
+          "name": "addFeedbackModel",
+          "submitButton": "Save",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "name": "addFeedback",
+      "title": "Add Feedback",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [

@@ -15,7 +15,7 @@
                 // and feel of the operating system
                 skin: 'flat',
                 // the application needs to know which view to load first
-                initial: 'components/login/view.html',
+                initial: 'components/home/view.html',
                 statusBarStyle: 'black-translucent'
             });
         });
@@ -68,16 +68,15 @@
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 
-function GetLoggedInUserSession()
-{
-    var loggedinuserSession='';
-    loggedinuserSession= JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
+function GetLoggedInUserSession() {
+    var loggedinuserSession = '';
+    loggedinuserSession = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
     return loggedinuserSession;
- }
-function ShowLoggedInUser()
-{    
-    var loggedinUserSessionID=JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
+}
+
+function ShowLoggedInUser() {
+    var loggedinUserSessionID = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
     console.log(loggedinUserSessionID);
-    $("#loggedinUser").html(loggedinUserSessionID);    
+    $("#loggedinUser").html(loggedinUserSessionID);
 }
 // END_CUSTOM_CODE_kendoUiMobileApp
