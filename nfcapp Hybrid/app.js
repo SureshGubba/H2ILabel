@@ -68,11 +68,16 @@
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 
+function GetLoggedInUserSession()
+{
+    var loggedinuserSession='';
+    loggedinuserSession= JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
+    return loggedinuserSession;
+ }
 function ShowLoggedInUser()
 {    
-    console.log('Showloggedinuser')
-    console.log(localStorage.getItem("LoggedinUser"));
-    console.log($("#loggedinUser").html());
-    $("#loggedinUser").html(localStorage.getItem("LoggedinUser"));    
+    var loggedinUserSessionID=JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
+    console.log(loggedinUserSessionID);
+    $("#loggedinUser").html(loggedinUserSessionID);    
 }
 // END_CUSTOM_CODE_kendoUiMobileApp
