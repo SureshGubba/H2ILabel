@@ -68,11 +68,13 @@
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 
-function GetLoggedInUserSession() {
-    var loggedinuserSession = '';
-    if (localStorage.getItem("LoggedinUser") !== null) {
-    loggedinuserSession = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
-    }
+function GetLoggedInUserSession() {    
+    var loggedinuserSession = 'da9312b2-5166-4f6e-aee4-f6723daa684a';
+    
+    //if (localStorage.getItem("LoggedinUser") === null) {
+    //    return loggedinuserSession;
+    //}
+    //loggedinuserSession = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;    
     return loggedinuserSession;
 }
 

@@ -11,7 +11,6 @@ app.users = kendo.observable({
 // START_CUSTOM_CODE_users
 
 function LoadNFCUsers() {
-    console.log('nfc');
     var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
     var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
     $.ajax({
@@ -19,8 +18,7 @@ function LoadNFCUsers() {
         crossDomain: true,
         url: WebAPIURL + "/user/GetUsers?Authorization=" + AuthKey,
         dataType: "json",
-        success: function(data) {
-            console.log(data);
+        success: function(data) {           
             $("#users").kendoMobileListView({
                 dataSource: data,
                 template: "<div><div>#: data.EmailID #</div><div>#: data.Password #</div><div>#: data.IsActivated #</div></div>"

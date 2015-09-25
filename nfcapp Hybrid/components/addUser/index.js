@@ -29,22 +29,6 @@ app.addUser = kendo.observable({
 
 // START_CUSTOM_CODE_addUserModel
 
-function LoadCountries() {
-    var dataSource = new kendo.data.DataSource({
-        transport: {
-            read: {
-                url: "http://services.groupkt.com/country/get/all",
-                dataType: "json"
-            }
-        }
-    });
-    $("#cmbCountries").kendoComboBox({
-        dataSource: dataSource,
-        dataTextField: "name",
-        dataValueField: "alpha2_code"
-    });
-}
-
 function AddNewUser(email1, password1, companyName, country, application, platform,app) {
     var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
     var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
