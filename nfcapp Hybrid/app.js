@@ -70,13 +70,13 @@
 
 function GetLoggedInUserSession() {
     var loggedinuserSession = '';
+    if (localStorage.getItem("LoggedinUser") !== null) {
     loggedinuserSession = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
+    }
     return loggedinuserSession;
 }
 
 function ShowLoggedInUser() {
-    var loggedinUserSessionID = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;
-    console.log(loggedinUserSessionID);
-    $("#loggedinUser").html(loggedinUserSessionID);
+     $("#loggedinUser").html(GetLoggedInUserSession());
 }
 // END_CUSTOM_CODE_kendoUiMobileApp
