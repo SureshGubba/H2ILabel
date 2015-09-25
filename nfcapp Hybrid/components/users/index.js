@@ -1,8 +1,11 @@
 'use strict';
 
 app.users = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function() {LoadNFCUsers();},
+    afterShow: function() {},    
+    addNewUser: function() {
+        app.mobileApp.navigate("components/addUser/view.html");
+    }
 });
 
 // START_CUSTOM_CODE_users
