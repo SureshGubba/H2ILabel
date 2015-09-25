@@ -40,7 +40,7 @@ function VerifyLogin(email,password,app)
 					"IMEINumber": Math.random()
                 },
                 success: function (data) {
-                    localStorage.setItem("LoggedinUser",data.EmailID);
+                    localStorage.setItem("LoggedinUser",JSON.stringify(data));
                     console.log(data); 
                     console.log($('#usersview').attr("href"));
                     app.mobileApp.navigate($('#usersview').attr("href"));
