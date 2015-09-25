@@ -6,6 +6,10 @@ app.users = kendo.observable({
         LoadNFCUsers();
     },
     afterShow: function () {}
+
+addUser: function() {
+              app.mobileApp.navigate($('#usersview').attr("href"));
+}
 });
 
 // START_CUSTOM_CODE_users

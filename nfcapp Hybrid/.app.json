@@ -63,6 +63,53 @@
       "title": "Login",
       "addToNavigation": true,
       "icon": "contacts"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "form",
+          "components": [
+            {
+              "type": "field",
+              "name": "email1",
+              "title": "Email",
+              "inputType": "email",
+              "placeholder": "example@example.com"
+            },
+            {
+              "type": "field",
+              "name": "password1",
+              "title": "Password",
+              "inputType": "password"
+            },
+            {
+              "type": "field",
+              "name": "companyName",
+              "title": "Company",
+              "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "country",
+              "title": "Country",
+              "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "application",
+              "title": "Application",
+              "inputType": "text"
+            }
+          ],
+          "name": "addUserModel",
+          "submitButton": "Save",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "name": "addUser",
+      "title": "Add User",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [

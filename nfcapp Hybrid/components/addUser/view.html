@@ -1,0 +1,42 @@
+<div data-role="view" data-title="Add User" data-layout="main-nonav" data-model="app.addUser" data-show="app.addUser.onShow" data-after-show="app.addUser.afterShow">
+    <div id="addUserModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Email
+                        <input data-bind="value: addUserModel.fields.email1" placeholder="example@example.com" type="email">
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input data-bind="value: addUserModel.fields.password1" type="password">
+                    </label>
+                </li>
+                <li>
+                    <label>Company
+                        <input data-bind="value: addUserModel.fields.companyName" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Country
+                        <input data-bind="value: addUserModel.fields.country" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Application
+                        <input data-bind="value: addUserModel.fields.application" type="text">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: addUserModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: addUserModel.submit }">Save</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_addUserModel -->
+        <!-- END_CUSTOM_CODE_addUserModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_addUser -->
+    <!-- END_CUSTOM_CODE_addUser -->
+</div>
