@@ -5,10 +5,10 @@ app.users = kendo.observable({
         ShowLoggedInUser();
         LoadNFCUsers();
     },
-    afterShow: function () {}
+    afterShow: function () {},
 
-addUser: function() {
-              app.mobileApp.navigate($('#usersview').attr("href"));
+addNewUser: function() {
+              app.mobileApp.navigate("components/addUser/view.html");
 }
 });
 
