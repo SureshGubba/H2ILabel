@@ -14,7 +14,7 @@ app.login = kendo.observable({
             email: '',
         },
         login: function() {
-            VerifyLogin(loginModel.fields.email,loginModel.fields.password,app);
+            VerifyLogin(loginModel.fields.email,loginModel.fields.password);
         },
         cancel: function() {}
     });
