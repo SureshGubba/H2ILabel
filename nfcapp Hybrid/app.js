@@ -67,4 +67,12 @@
 }());
 
 // START_CUSTOM_CODE_kendoUiMobileApp
+
+function ShowLoggedInUser()
+{    
+    console.log('Showloggedinuser')
+    console.log(localStorage.getItem("LoggedinUser"));
+    console.log($("#loggedinUser").html());
+    $("#loggedinUser").html(localStorage.getItem("LoggedinUser"));    
+}
 // END_CUSTOM_CODE_kendoUiMobileApp

@@ -2,6 +2,7 @@
 
 app.users = kendo.observable({
     onShow: function () {
+        ShowLoggedInUser();
         LoadNFCUsers();
     },
     afterShow: function () {}
