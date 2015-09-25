@@ -106,6 +106,12 @@
               "name": "platform",
               "title": "Platform",
               "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "countries",
+              "title": "Country",
+              "inputType": "dropdownlist"
             }
           ],
           "name": "addUserModel",
