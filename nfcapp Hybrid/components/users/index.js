@@ -14,8 +14,6 @@ app.users = kendo.observable({
 
 function LoadNFCUsers() {
     console.log('LoadUsers');
-    var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
-    var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
     $.ajax({
         type: "GET",
         crossDomain: true,
@@ -24,7 +22,7 @@ function LoadNFCUsers() {
         success: function(data) {           
             $("#users").kendoMobileListView({
                 dataSource: data,
-                template: "<div><div>#: data.EmailID #</div><div>#: data.Password #</div><div>#: data.IsActivated #</div></div>"
+                template: "<div><div>Email #: data.EmailID #</div><div>Password #: data.Password #</div><div>IsActive #: data.IsActivated #</div></div>"
             });
         },
         error: function(xhr) {

@@ -67,6 +67,9 @@
 }());
 
 // START_CUSTOM_CODE_kendoUiMobileApp
+    var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
+    var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
+   
 
 function IsUserLoggedIn() {
         if (localStorage.getItem("LoggedinUser") === null)
@@ -97,8 +100,8 @@ function GetLoggedInUserSession() {
 
 function DisplayLoggedInUser() {
                 if (IsUserLoggedIn() === true) {
-
-                    $("#loggedinUser").html(JSON.parse(GetLoggedInUser()).EmailID);
+						var loginEmail = JSON.parse(GetLoggedInUser()).EmailID;
+                    $("#loggedinUser").html(loginEmail.substring(0,loginEmail.indexOf("@")));
                 }
                 console.log("ShowLoggedInUser");
             }
