@@ -21,7 +21,7 @@ app.addUser = kendo.observable({
         submit: function() {
             AddNewUser(addUserModel.fields.email1, addUserModel.fields.password1, addUserModel.fields.companyName, addUserModel.fields.country, addUserModel.fields.application, addUserModel.fields.platform,app);
         },
-        cancel: function() { app.mobileApp.navigate($('#usersview').attr("href"));}
+        cancel: function() { app.mobileApp.navigate("components/users/view.html");}
     });
 
     parent.set('addUserModel', addUserModel);
@@ -45,7 +45,7 @@ function AddNewUser(email1, password1, companyName, country, application, platfo
             "ApplicationName": application
         },
         success: function(data) {
-            app.mobileApp.navigate($('#usersview').attr("href"));
+            app.mobileApp.navigate("components/users/view.html");
         },
         error: function(xhr) {
             alert(xhr.responseText);
