@@ -11,6 +11,7 @@ app.users = kendo.observable({
 // START_CUSTOM_CODE_users
 
 function LoadNFCUsers() {
+    console.log('LoadUsers');
     var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
     var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
     $.ajax({

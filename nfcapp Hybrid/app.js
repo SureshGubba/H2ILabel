@@ -79,6 +79,7 @@ function GetLoggedInUserSession() {
 }
 
 function ShowLoggedInUser() {
+    Console.log("ShowLoggedInUser");
      $("#loggedinUser").html(GetLoggedInUserSession());
 }
 // END_CUSTOM_CODE_kendoUiMobileApp
