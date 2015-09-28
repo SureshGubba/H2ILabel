@@ -5,7 +5,12 @@ app.feedback = kendo.observable({
         DisplayLoggedInUser();
         LoadFeedbacks();
     },
-    afterShow: function() {}
+    afterShow: function() {},
+    
+    addNewFeedback : function()
+    {
+        app.mobileApp.navigate("components/addFeedback/view.html");
+    }
 });
 
 // START_CUSTOM_CODE_feedback
