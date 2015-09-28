@@ -1,8 +1,7 @@
 'use strict';
 
 app.errorReports = kendo.observable({
-    onShow: function() {DisplayLoggedInUser();
-                        LoadErrorReports();},
+    onShow: function() {},
     afterShow: function() {}
 });
 

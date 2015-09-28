@@ -1,9 +1,7 @@
 'use strict';
 
 app.addUser = kendo.observable({
-    onShow: function() {
-         DisplayLoggedInUser();
-    },
+    onShow: function() {},
     afterShow: function() {}
 });
 
@@ -20,10 +18,8 @@ app.addUser = kendo.observable({
             password1: '',
             email1: '',
         },
-        submit: function() {
-            AddNewUser(addUserModel.fields.email1, addUserModel.fields.password1, addUserModel.fields.companyName, addUserModel.fields.country, addUserModel.fields.application, addUserModel.fields.platform,app);
-        },
-        cancel: function() { app.mobileApp.navigate("components/users/view.html");}
+        submit: function() {},
+        cancel: function() {}
     });
 
     parent.set('addUserModel', addUserModel);
@@ -31,8 +27,8 @@ app.addUser = kendo.observable({
 
 // START_CUSTOM_CODE_addUserModel
 
-function AddNewUser(email1, password1, companyName, country, application, platform,app) {
-      $.ajax({
+function AddNewUser(email1, password1, companyName, country, application, platform, app) {
+    $.ajax({
         type: "POST",
         crossDomain: true,
         url: WebAPIURL + "/User/RegisterUser?Authorization=" + AuthKey,

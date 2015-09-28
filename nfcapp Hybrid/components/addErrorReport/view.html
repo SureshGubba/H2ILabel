@@ -1,0 +1,37 @@
+<div data-role="view" data-title="Add Error Report" data-layout="main-nonav" data-model="app.addErrorReport" data-show="app.addErrorReport.onShow" data-after-show="app.addErrorReport.afterShow">
+    <div id="addErrorReportModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Phone Identity
+                        <input data-bind="value: addErrorReportModel.fields.phoneIdentity" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>SerialNo
+                        <input data-bind="value: addErrorReportModel.fields.serialNo" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Model
+                        <input data-bind="value: addErrorReportModel.fields.model" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>Problem Description
+                        <input data-bind="value: addErrorReportModel.fields.problemDescription" type="text">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: addErrorReportModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: addErrorReportModel.submit }">Save</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_addErrorReportModel -->
+        <!-- END_CUSTOM_CODE_addErrorReportModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_addErrorReport -->
+    <!-- END_CUSTOM_CODE_addErrorReport -->
+</div>

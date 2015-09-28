@@ -1,16 +1,8 @@
 'use strict';
 
 app.feedback = kendo.observable({
-    onShow: function() {
-        DisplayLoggedInUser();
-        LoadFeedbacks();
-    },
-    afterShow: function() {},
-    
-    addNewFeedback : function()
-    {
-        app.mobileApp.navigate("components/addFeedback/view.html");
-    }
+    onShow: function() {},
+    afterShow: function() {}
 });
 
 // START_CUSTOM_CODE_feedback

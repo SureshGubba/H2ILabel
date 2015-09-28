@@ -13,10 +13,8 @@ app.login = kendo.observable({
             password: '',
             email: '',
         },
-        submit: function() {
-             VerifyLogin(loginModel.fields.email, loginModel.fields.password,app);
-        },
-        register: function() { app.mobileApp.navigate("components/addUser/view.html");}
+        submit: function() {},
+        cancel: function() {}
     });
 
     parent.set('loginModel', loginModel);

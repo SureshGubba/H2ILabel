@@ -150,6 +150,46 @@
       "name": "addFeedback",
       "title": "Add Feedback",
       "addToNavigation": false
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "form",
+          "components": [
+            {
+              "type": "field",
+              "name": "phoneIdentity",
+              "title": "Phone Identity",
+              "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "serialNo",
+              "title": "SerialNo",
+              "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "model",
+              "title": "Model",
+              "inputType": "text"
+            },
+            {
+              "type": "field",
+              "name": "problemDescription",
+              "title": "Problem Description",
+              "inputType": "text"
+            }
+          ],
+          "name": "addErrorReportModel",
+          "submitButton": "Save",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "name": "addErrorReport",
+      "title": "Add Error Report",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [

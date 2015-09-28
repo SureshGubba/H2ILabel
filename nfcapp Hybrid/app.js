@@ -1,12 +1,12 @@
-(function () {
+(function() {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
     var app = {
         data: {}
     };
 
-    var bootstrap = function () {
-        $(function () {
+    var bootstrap = function() {
+        $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {
 
                 // you can change the default transition (slide, zoom or fade)
@@ -15,7 +15,7 @@
                 // and feel of the operating system
                 skin: 'flat',
                 // the application needs to know which view to load first
-                initial: 'components/login/view.html',
+                initial: 'components/home/view.html',
                 statusBarStyle: 'black-translucent'
             });
         });
@@ -23,7 +23,7 @@
 
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
-        document.addEventListener('deviceready', function () {
+        document.addEventListener('deviceready', function() {
             // hide the splash screen as soon as the app is ready. otherwise
             // Cordova will wait 5 very long seconds to do it for you.
             if (navigator && navigator.splashscreen) {
@@ -31,13 +31,13 @@
             }
 
             var element = document.getElementById('appDrawer');
-            if (typeof (element) != 'undefined' && element != null) {
+            if (typeof(element) != 'undefined' && element != null) {
                 if (window.navigator.msPointerEnabled) {
-                    $("#navigation-container").on("MSPointerDown", "a", function (event) {
+                    $("#navigation-container").on("MSPointerDown", "a", function(event) {
                         app.keepActiveState($(this));
                     });
                 } else {
-                    $("#navigation-container").on("touchstart", "a", function (event) {
+                    $("#navigation-container").on("touchstart", "a", function(event) {
                         app.keepActiveState($(this));
                     });
                 }
@@ -57,7 +57,7 @@
 
     window.app = app;
 
-    app.isOnline = function () {
+    app.isOnline = function() {
         if (!navigator || !navigator.connection) {
             return true;
         } else {
@@ -67,43 +67,41 @@
 }());
 
 // START_CUSTOM_CODE_kendoUiMobileApp
-    var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
-    var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
-   
+var WebAPIURL = "http://schneidernfcservices.cloudapp.net/api";
+var AuthKey = "1cede1a2-e7d4-44f4-ab39-75c646c88b71";
 
 function IsUserLoggedIn() {
-        if (localStorage.getItem("LoggedinUser") === null)
-            {
-                return false;
-            }
+    if (localStorage.getItem("LoggedinUser") === null) {
+        return false;
+    }
 
-            return true;
-        }
+    return true;
+}
 
- function GetLoggedInUser() {
+function GetLoggedInUser() {
 
-            if (IsUserLoggedIn() === true) {
-                return localStorage.getItem("LoggedinUser");
-            }
+    if (IsUserLoggedIn() === true) {
+        return localStorage.getItem("LoggedinUser");
+    }
 
-            return null;
-        }
+    return null;
+}
 
 function GetLoggedInUserSession() {
-            var loggedinuserSession = '';
+    var loggedinuserSession = '';
 
-            if (IsUserLoggedIn() === true) {
-                loggedinuserSession = JSON.parse(GetLoggedInUser()).SessionID;
-            }
-            return loggedinuserSession;
-        }
+    if (IsUserLoggedIn() === true) {
+        loggedinuserSession = JSON.parse(GetLoggedInUser()).SessionID;
+    }
+    return loggedinuserSession;
+}
 
 function DisplayLoggedInUser() {
-                if (IsUserLoggedIn() === true) {
-						var loginEmail = JSON.parse(GetLoggedInUser()).EmailID;
-                    $("#loggedinUser").html(loginEmail.substring(0,loginEmail.indexOf("@")));
-                }
-                console.log("ShowLoggedInUser");
-            }
+    if (IsUserLoggedIn() === true) {
+        var loginEmail = JSON.parse(GetLoggedInUser()).EmailID;
+        $("#loggedinUser").html(loginEmail.substring(0, loginEmail.indexOf("@")));
+    }
+    console.log("ShowLoggedInUser");
+}
 
 // END_CUSTOM_CODE_kendoUiMobileApp
