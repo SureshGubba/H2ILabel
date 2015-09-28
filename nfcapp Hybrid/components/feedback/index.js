@@ -2,6 +2,7 @@
 
 app.feedback = kendo.observable({
     onShow: function() {
+        DisplayLoggedInUser();
         LoadFeedbacks();
     },
     afterShow: function() {}

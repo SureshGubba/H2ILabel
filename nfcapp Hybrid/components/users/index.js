@@ -1,7 +1,9 @@
 'use strict';
 
 app.users = kendo.observable({
-    onShow: function() {LoadNFCUsers();},
+    onShow: function() {
+        				DisplayLoggedInUser();
+                       LoadNFCUsers();},
     afterShow: function() {},    
     addNewUser: function() {
         app.mobileApp.navigate("components/addUser/view.html");

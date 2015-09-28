@@ -1,12 +1,12 @@
-(function() {
+(function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
     var app = {
         data: {}
     };
 
-    var bootstrap = function() {
-        $(function() {
+    var bootstrap = function () {
+        $(function () {
             app.mobileApp = new kendo.mobile.Application(document.body, {
 
                 // you can change the default transition (slide, zoom or fade)
@@ -23,7 +23,7 @@
 
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
-        document.addEventListener('deviceready', function() {
+        document.addEventListener('deviceready', function () {
             // hide the splash screen as soon as the app is ready. otherwise
             // Cordova will wait 5 very long seconds to do it for you.
             if (navigator && navigator.splashscreen) {
@@ -31,13 +31,13 @@
             }
 
             var element = document.getElementById('appDrawer');
-            if (typeof(element) != 'undefined' && element != null) {
+            if (typeof (element) != 'undefined' && element != null) {
                 if (window.navigator.msPointerEnabled) {
-                    $("#navigation-container").on("MSPointerDown", "a", function(event) {
+                    $("#navigation-container").on("MSPointerDown", "a", function (event) {
                         app.keepActiveState($(this));
                     });
                 } else {
-                    $("#navigation-container").on("touchstart", "a", function(event) {
+                    $("#navigation-container").on("touchstart", "a", function (event) {
                         app.keepActiveState($(this));
                     });
                 }
@@ -57,7 +57,7 @@
 
     window.app = app;
 
-    app.isOnline = function() {
+    app.isOnline = function () {
         if (!navigator || !navigator.connection) {
             return true;
         } else {
@@ -68,18 +68,39 @@
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 
-function GetLoggedInUserSession() {    
-    var loggedinuserSession = 'da9312b2-5166-4f6e-aee4-f6723daa684a';
-    
-    //if (localStorage.getItem("LoggedinUser") === null) {
-    //    return loggedinuserSession;
-    //}
-    //loggedinuserSession = JSON.parse(localStorage.getItem("LoggedinUser")).SessionID;    
-    return loggedinuserSession;
-}
+function IsUserLoggedIn() {
+        if (localStorage.getItem("LoggedinUser") === null)
+            {
+                return false;
+            }
 
-function ShowLoggedInUser() {
-    Console.log("ShowLoggedInUser");
-     $("#loggedinUser").html(GetLoggedInUserSession());
-}
+            return true;
+        }
+
+ function GetLoggedInUser() {
+
+            if (IsUserLoggedIn() === true) {
+                return localStorage.getItem("LoggedinUser");
+            }
+
+            return null;
+        }
+
+function GetLoggedInUserSession() {
+            var loggedinuserSession = '';
+
+            if (IsUserLoggedIn() === true) {
+                loggedinuserSession = JSON.parse(GetLoggedInUser()).SessionID;
+            }
+            return loggedinuserSession;
+        }
+
+function DisplayLoggedInUser() {
+                if (IsUserLoggedIn() === true) {
+
+                    $("#loggedinUser").html(JSON.parse(GetLoggedInUser()).EmailID);
+                }
+                console.log("ShowLoggedInUser");
+            }
+
 // END_CUSTOM_CODE_kendoUiMobileApp
