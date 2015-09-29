@@ -13,7 +13,7 @@ app.addFeedback = kendo.observable({
             rating: '',
             comments: '',
         },
-        submit: function() {},
+        submit: function() {AddNewFeedback(addFeedbackModel.rating, addFeedbackModel.comments, addFeedbackModel.loggedinUserSessionID, app)},
         cancel: function() {}
     });
 
