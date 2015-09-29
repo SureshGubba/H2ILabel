@@ -78,13 +78,21 @@ function IsUserLoggedIn() {
     return true;
 }
 
+function SetLoggedInUser(data) {
+
+    console.log("Set Logged In User :"+data.EmailID+" SessionID :"+data.SessionID);
+    localStorage.setItem("LoggedinUser", JSON.stringify(data));
+    
+
+}
+
 function GetLoggedInUser() {
+var loggedinuser = null;
 
     if (IsUserLoggedIn() === true) {
-        return localStorage.getItem("LoggedinUser");
+        loggedinuser= localStorage.getItem("LoggedinUser");
     }
-
-    return null;
+    return loggedinuser;
 }
 
 function GetLoggedInUserSession() {
@@ -93,15 +101,17 @@ function GetLoggedInUserSession() {
     if (IsUserLoggedIn() === true) {
         loggedinuserSession = JSON.parse(GetLoggedInUser()).SessionID;
     }
+    console.log("Logged in Session:"+loggedinuserSession)
     return loggedinuserSession;
 }
 
 function DisplayLoggedInUser() {
     if (IsUserLoggedIn() === true) {
         var loginEmail = JSON.parse(GetLoggedInUser()).EmailID;
+         var loginSessionID = JSON.parse(GetLoggedInUser()).SessionID;        
+     	console.log("Logged In User :"+loginEmail+" SessionID :"+loginSessionID);
         $("#loggedinUser").html(loginEmail.substring(0, loginEmail.indexOf("@")));
-    }
-    console.log("ShowLoggedInUser");
+    }  
 }
 
 // END_CUSTOM_CODE_kendoUiMobileApp

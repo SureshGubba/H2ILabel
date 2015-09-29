@@ -13,7 +13,7 @@ app.login = kendo.observable({
             password: '',
             email: '',
         },
-        submit: function() {},
+        submit: function() {VerifyLogin(loginModel.fields.email, loginModel.fields.password, app);},
         cancel: function() {}
     });
 
@@ -23,6 +23,7 @@ app.login = kendo.observable({
 // START_CUSTOM_CODE_loginModel
 
 function VerifyLogin(email, password, app) {
+    console.log('VerifyLogin');
     $.ajax({
         type: "POST",
         crossDomain: true,
@@ -33,7 +34,7 @@ function VerifyLogin(email, password, app) {
             "IMEINumber": Math.random()
         },
         success: function(data) {
-            localStorage.setItem("LoggedinUser", JSON.stringify(data));
+            SetLoggedInUser(data);
             app.mobileApp.navigate("components/users/view.html");
         },
         error: function(xhr) {

@@ -17,7 +17,7 @@ app.addErrorReport = kendo.observable({
         },
        submit: function() {
                             AddNewErrorReport(addErrorReportModel.fields.problemDescription, addErrorReportModel.fields.model, addErrorReportModel.fields.serialNo, 
-                                       addErrorReportModel.fields.phoneIdentity, GetLoggedInUser(),app);},
+                                       addErrorReportModel.fields.phoneIdentity, GetLoggedInUserSession(),app);},
         cancel: function() {app.mobileApp.navigate("components/errorReports/view.html");}
     });
 
@@ -30,10 +30,12 @@ function AddNewErrorReport(problemDescription, model, serialNo,phoneIdentity, lo
     $.ajax({
         type: "POST",
         crossDomain: true,
-        url: WebAPIURL + "/FeedBack/SaveFeedBack?Authorization=" + AuthKey,
+        url: WebAPIURL + "/ErrorReport/SaveErrorReport?Authorization=" + AuthKey,
         data: {
-            "Comments": rating,
-            "Rating": comments,
+            "PhoneIdentity": phoneIdentity,
+            "SerialNo": serialNo,
+            "Model":model,
+            "ProblemDescription":problemDescription,          
             "SessionID": loggedinUserSessionID
         },
         success: function(data) {
