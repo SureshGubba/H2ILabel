@@ -37,11 +37,11 @@
         <!-- application views will be rendered here -->
 
         <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
+            <div data-role="tabstrip" id="navigation-container">                
+                <a href="components/login/view.html" data-icon="contacts">Login</a>
                 <a href="components/users/view.html" data-icon="organize">Users</a>
                 <a href="components/errorReports/view.html" data-icon="settings">Error Reports</a>
                 <a href="components/feedback/view.html" data-icon="home">Feedback</a>
-                <a href="components/login/view.html" data-icon="contacts">Login</a>
             </div>
         </footer>
     </div>
@@ -49,7 +49,13 @@
     <div data-role="layout" data-id="main-nonav">
         <header data-role="header">
             <div data-role="navbar">
-                <span data-role="view-title"></span>
+                <span  data-role="view-title"></span>
+            </div>
+        </header>
+        
+         <header data-role="header">
+            <div data-role="navbar">
+                <span id="loggedinUser">ccc</span>
             </div>
         </header>
 
