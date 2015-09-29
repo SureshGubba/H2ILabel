@@ -1,7 +1,7 @@
 'use strict';
 
 app.addFeedback = kendo.observable({
-    onShow: function() {},
+    onShow: function() {DisplayLoggedInUser();},
     afterShow: function() {}
 });
 
@@ -13,10 +13,10 @@ app.addFeedback = kendo.observable({
             rating: '',
             comments: '',
         },
-        submit: function() {DisplayLoggedInUser();
+        submit: function() {
                             AddNewFeedback(addFeedbackModel.rating, addFeedbackModel.comments, GetLoggedInUser(), app);
                            },
-        cancel: function() {}
+        cancel: function() {app.mobileApp.navigate("components/feedback/view.html");}
     });
 
     parent.set('addFeedbackModel', addFeedbackModel);

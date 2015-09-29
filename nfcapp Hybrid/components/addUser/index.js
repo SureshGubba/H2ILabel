@@ -1,7 +1,7 @@
 'use strict';
 
 app.addUser = kendo.observable({
-    onShow: function() {},
+    onShow: function() {DisplayLoggedInUser();},
     afterShow: function() {}
 });
 
@@ -18,10 +18,10 @@ app.addUser = kendo.observable({
             password1: '',
             email1: '',
         },
-        submit: function() {DisplayLoggedInUser();
+        submit: function() {
                             AddNewUser(addUserModel.fields.email1, addUserModel.fields.password1, addUserModel.fields.companyName, 
                                        addUserModel.fields.country, addUserModel.fields.application, addUserModel.fields.platform, app);},
-        cancel: function() {}
+        cancel: function() {app.mobileApp.navigate("components/users/view.html");}
     });
 
     parent.set('addUserModel', addUserModel);

@@ -15,12 +15,33 @@ app.addErrorReport = kendo.observable({
             serialNo: '',
             phoneIdentity: '',
         },
-        submit: function() {},
-        cancel: function() {}
+       submit: function() {
+                            AddNewErrorReport(addErrorReportModel.fields.problemDescription, addErrorReportModel.fields.model, addErrorReportModel.fields.serialNo, 
+                                       addErrorReportModel.fields.phoneIdentity, GetLoggedInUser(),app);},
+        cancel: function() {app.mobileApp.navigate("components/users/view.html");}
     });
 
     parent.set('addErrorReportModel', addErrorReportModel);
 })(app.addErrorReport);
 
 // START_CUSTOM_CODE_addErrorReportModel
+function AddNewErrorReport(problemDescription, model, serialNo,phoneIdentity, loggedinUserSessionID,app) 
+{
+    $.ajax({
+        type: "POST",
+        crossDomain: true,
+        url: WebAPIURL + "/FeedBack/SaveFeedBack?Authorization=" + AuthKey,
+        data: {
+            "Comments": rating,
+            "Rating": comments,
+            "SessionID": loggedinUserSessionID
+        },
+        success: function(data) {
+            app.mobileApp.navigate("components/feedback/view.html");
+        },
+        error: function(xhr) {
+            alert(xhr.responseText);
+        }
+    });
+}
 // END_CUSTOM_CODE_addErrorReportModel

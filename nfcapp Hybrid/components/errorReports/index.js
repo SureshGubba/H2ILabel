@@ -3,7 +3,9 @@
 app.errorReports = kendo.observable({
     onShow: function() {DisplayLoggedInUser();
                         LoadErrorReports();},
-    afterShow: function() {}
+    afterShow: function() {},
+    
+    addNewErrorReport: function(){app.mobileApp.navigate("components/addErrorReport/view.html");}
 });
 
 // START_CUSTOM_CODE_errorReports
