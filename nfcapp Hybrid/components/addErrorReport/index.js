@@ -18,7 +18,7 @@ app.addErrorReport = kendo.observable({
        submit: function() {
                             AddNewErrorReport(addErrorReportModel.fields.problemDescription, addErrorReportModel.fields.model, addErrorReportModel.fields.serialNo, 
                                        addErrorReportModel.fields.phoneIdentity, GetLoggedInUser(),app);},
-        cancel: function() {app.mobileApp.navigate("components/users/view.html");}
+        cancel: function() {app.mobileApp.navigate("components/errorReports/view.html");}
     });
 
     parent.set('addErrorReportModel', addErrorReportModel);
