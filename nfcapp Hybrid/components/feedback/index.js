@@ -1,7 +1,8 @@
 'use strict';
 
 app.feedback = kendo.observable({
-    onShow: function() {},
+    onShow: function() {DisplayLoggedInUser();
+                       LoadFeedbacks();},
     afterShow: function() {}
 });
 
