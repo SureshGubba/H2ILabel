@@ -18,7 +18,8 @@ app.addUser = kendo.observable({
             password1: '',
             email1: '',
         },
-        submit: function() {},
+        submit: function() {AddNewUser(addUserModel.fields.email1, addUserModel.fields.password1, addUserModel.fields.companyName, 
+                                       addUserModel.fields.country, addUserModel.fields.application, addUserModel.fields.platform, app);},
         cancel: function() {}
     });
 
